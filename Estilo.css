@@ -1,0 +1,784 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Work+Sans:wght@100;300;400;600;800&display=swap');
+*{
+    box-sizing: border-box;
+    font-family: 'work Sans';
+    margin: 0;
+    padding: 0;
+}
+html{
+    /* esto me va a permitir deslizar cuando hago clic en los links del menu */
+    scroll-behavior: smooth;
+}
+/* Menu */ /* esta es la parte del fondo del menu*/
+.contenedor-header{
+    background: #1e2326;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+/* Menu */ /* esta es la parte del centro es el contenido del menu*/
+.contenedor-header header{
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+/* Menu */ /* modifica Mi nombre*/
+.contenedor-header header .logo a{
+    font-family: 'Righteous';
+    font-size: 36px;
+    color: #1cb698;
+    text-decoration: none;
+}
+/* Menu */ /* esta es la parte del contenido del menu le cambia el estilo*/
+.contenedor-header header ul{
+    display: flex;
+    list-style: none;   
+}
+/* Menu */ /* esta es la parte del contenido del menu los deja alineados
+de forma horizontal en el centro y separados uno del otro y le quita el subrayado*/
+.contenedor-header header nav ul li a{
+    text-align: none;
+    color: #fff;
+    margin: 0 15px;
+    padding: 3px;
+    transition: .5s;
+    text-decoration: none;
+}
+/* Menu */ /* esto hace que cuando pongan el raton sobre alguna seleccion del menu cambie de color*/
+.contenedor-header header nav ul li a:hover{
+    color: #1cb698;
+}
+/* Menu */ /* esto hace que nuestro boton de menu (el de las tres lineas) cambie de color y tamaño*/
+.nav-responsive{
+    background-color: #1cb698;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none; /* desaparece el boton*/
+}
+/*Esto es de la parte del INICIO para modificar el fondo*/
+.inicio{
+    background: linear-gradient(to top, rgba(30,35,38,.8), rgba(30,35,38,1)),
+    url(Img/fondo.jpg);
+    background-size: cover;
+    height: 100vh;
+    color: #fff;
+    display: flex;
+    align-items: center;
+}
+/*para que la foto de perfil se ponga en el medio con los demas datos del mismo*/
+.inicio .contenido-banner{
+    padding: 20px;
+    background-color: #1e2326;
+    max-width: 350px;
+    margin: auto;
+    text-align: center;
+    border-radius: 40px;
+}
+/*hace arreglos a mi foto de perfil y su estructura*/
+.inicio .contenido-banner img{
+    margin-top: 40px;
+    border: 10px solid #1cb698;
+    display: block;
+    width: 80%;
+    margin: auto;
+    border-radius: 100%;
+}
+/*modifica mi nombre*/
+.inicio .contenido-banner h1{
+    margin-top: 40px;
+    font-size: 42px;
+    font-family: 'Righteous';
+}
+/*modifica la seccion H2*/
+.inicio .contenido-banner h2{
+    font-size: 15px;
+    font-weight: normal;
+}
+/*modifica la parte de las redes*/
+.inicio .contenido-banner .redes a{
+    color: #fff;
+    display: inline-block;
+    text-decoration: none;
+    border: 1px solid #fff;
+    border-radius: 100%;
+    width: 42px;
+    height: 42px;
+    line-height: 42px;
+    margin: 40px 5px;
+    font-size: 20px;
+    transition: .3s;
+}
+/*en la parte de las redes cuando se selecciona se pondra de color*/
+.inicio .contenido-banner .redes a:hover{
+    background-color: #1cb698;
+}
+/*Desde aqui comienza la seecion SOBRE MI*/
+/*se modificara el fondo de dicha seccion*/
+.sobremi{
+    background-color: #1e2326;
+    color: #fff;
+    padding: 50px 20px;
+}
+/*se modificara el texto*/
+.sobremi .contenido-seccion{
+    max-width: 1100px;
+    margin: auto;
+}
+/*se modificara el sobre mi (H2)*/
+.sobremi h2{
+    font-size: 40px;
+    font-family: 'Righteous';
+    text-align: center;
+    padding: 20px 0;
+}
+/*se modificara el texto descriptivo*/
+.sobremi .contenido-seccion p{
+    font: 18px;
+    line-height: 22px;
+    margin-bottom: 20px;
+}
+/*pone en negrilla las primeras palabras del texto*/
+.sobremi .contenido-seccion p span{
+    color: #1cb698;
+    font-weight: bold;
+}
+/*seciona por fila la parte de los intereses*/
+.sobremi .fila{
+    display: flex;
+}
+/*separa la seccion interes de datos personales*/
+.sobremi .fila .col{
+    width: 50%;
+}
+/*resalta los texto de datos personales e intereses*/
+.sobremi .fila .col h3{
+    font-size: 28px;
+    font-family: 'Righteous';
+    margin-bottom: 25px;
+}
+/*se quita el guion de forma de lista de los datos personales*/
+.sobremi .fila .col ul{
+    list-style: none;
+}
+/*separacion por renglon de los datos personlaes*/
+.sobremi .fila .col ul li{
+    margin: 12px 0;
+}
+/*cambia de color los datos personales*/
+.sobremi .fila .col ul li strong{
+    display: inline-block;
+    color: #1cb698;
+    width: 130px;
+}
+/*resalta la seccion del cargo*/
+.sobremi .fila .col ul li span{
+    background-color: #1cb698;
+    padding: 3px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+/*pone en fila la parte de los intereses*/
+.sobremi .fila .col .contenedor-intereses{
+    display: flex;
+    flex-wrap: wrap;   
+}
+/*cambia la forma y el contenido de los iconos de los intereses*/
+.sobremi .fila .col .contenedor-intereses .interes{
+    width: 100px;
+    height: 100px;
+    background-color: #252A2E;
+    border-radius: 10px;
+    margin: 0 15px 15px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: .3s;
+}
+/*hace que cundo pongas el cursos sobre los items de interes alumbren de color*/
+.sobremi .fila .col .contenedor-intereses .interes:hover{
+    background-color: #1cb698;
+}
+/*ajusta el tamaño de los items de interes*/
+.sobremi .fila .col .contenedor-intereses .interes i{
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+/*modifica el boton de descargar CV y lo ubica en el centro*/
+.sobremi button{
+    cursor: pointer;
+    background-color: transparent;
+    border: 2px solid #fff;
+    width: fit-content;
+    display: block;
+    margin: 20px auto;
+    padding: 10px 22px;
+    font-size: 16px;
+    color: #fff;
+    position: relative;
+    z-index: 10;
+}
+/*animacion de llenado en modo barra del boton CV*/
+.sobremi button .overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: #1cb698;
+    z-index: -1;
+    transition: 1s;
+}
+/*muestra el color del codigo anterior*/
+.sobremi button:hover .overlay{
+    width: 100%;
+}
+/*Seccion SKILL Aqui comienza esta seccion*/
+/*se modificara el fondo de dicha seccion*/
+.skills{
+    background-color: #252A2E;
+    color: #fff;
+    padding: 50px 20px;
+}
+/*se modificara el texto*/
+.skills .contenido-seccion{
+    max-width: 1100px;
+    margin: auto;
+}
+/*se modificara el Skills (H2)*/
+.skills h2{
+    font-size: 40px;
+    font-family: 'Righteous';
+    text-align: center;
+    padding: 20px 0;
+}
+/*ubica en filas los skills*/
+.skills .fila{
+    display: flex;
+}
+/*separa los textos de los skills*/
+.skills .fila .col{
+    width: 50%;
+    padding: 0 20px;
+}
+/*se modificara los titulos de los Skills (H3)*/
+.skills .fila .col h3{
+    font-size: 28px;
+    font-family: 'Righteous';
+    margin-bottom: 25px;
+}
+/*separa los textos de los porcentajes*/
+.skills .skill > span{
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+}
+/*crea una barra de porcentajes para los Skills*/
+.skills .skill .barra-skill{
+    height: 8px;
+    width: 80%;
+    background-color: #131517;
+    position: relative;
+    margin-bottom: 30px;
+}
+/*muestra la barra de un color*/
+.skills .skill .progreso{
+    background-color: #1cb698;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 8px;
+}
+/*vuelve el porcentaje de los skills en un circulo de color*/
+.skills .skill .barra-skill span{
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    background-color: #1cb698;
+    border-radius: 50px;
+    line-height: 40px;
+    text-align: center;
+    top: -17px;
+    right: -15px;
+    font-size: 14px;
+}
+/*hace que el porcentaje se mueva segun su nivel*/
+.skills .skill .javascript{
+    width: 0%;
+    animation: 2s javascript forwards;
+}
+@keyframes javascript{
+    0%{width: 0%;}
+    100%{width: 30%;}
+}
+.skills .skill .htmlcss{
+    width: 0%;
+    animation: 2s htmlcss forwards;
+}
+@keyframes htmlcss{
+    0%{width: 0%;}
+    100%{width: 30%;}
+}
+.skills .skill .postman{
+    width: 0%;
+    animation: 2s postman forwards;
+}
+@keyframes postman{
+    0%{width: 0%;}
+    100%{width: 75%;}
+}
+.skills .skill .as400{
+    width: 0%;
+    animation: 2s as400 forwards;
+}
+@keyframes as400{
+    0%{width: 0%;}
+    100%{width: 50%;}
+}
+.skills .skill .jira{
+    width: 0%;
+    animation: 2s jira forwards;
+}
+@keyframes jira{
+    0%{width: 0%;}
+    100%{width: 70%;}
+}
+.skills .skill .comunicacion{
+    width: 0%;
+    animation: 2s comunicacion forwards;
+}
+@keyframes comunicacion{
+    0%{width: 0%;}
+    100%{width: 80%;}
+}
+.skills .skill .trabajo{
+    width: 0%;
+    animation: 2s trabajo forwards;
+}
+@keyframes trabajo{
+    0%{width: 0%;}
+    100%{width: 80%;}
+}
+.skills .skill .adaptabilidad{
+    width: 0%;
+    animation: 2s adaptabilidad forwards;
+}
+@keyframes adaptabilidad{
+    0%{width: 0%;}
+    100%{width: 90%;}
+}
+.skills .skill .capacidad{
+    width: 0%;
+    animation: 2s capacidad forwards;
+}
+@keyframes capacidad{
+    0%{width: 0%;}
+    100%{width: 75%;}
+}
+.skills .skill .autoaprendizaje{
+    width: 0%;
+    animation: 2s autoaprendizaje forwards;
+}
+@keyframes autoaprendizaje{
+    0%{width: 0%;}
+    100%{width: 90%;}
+}
+/*Seccion CURRICULUM*/
+/*se modificara el fondo de dicha seccion*/
+.curriculum{
+    background-color: #1e2326;
+    color: #fff;
+    padding: 50px 20px;
+}
+/*se modificara el texto*/
+.curriculum .contenido-seccion{
+    max-width: 1100px;
+    margin: auto;
+}
+/*se modificara el Curriculum (H2)*/
+.curriculum h2{
+    font-size: 48px;
+    font-family: 'Righteous';
+    text-align: center;
+    padding: 20px 0;
+}
+/*ubica en filas los Curriculum*/
+.curriculum .fila{
+    display: flex;
+    justify-content: space-between;
+}
+/*separa las filas*/
+.curriculum .fila .col{
+    width: 49%;
+    padding: 0 20px;
+}
+/*cambia el estilo de letra de los titulos del H3*/
+.curriculum .fila .col h3{
+    font-size: 28px;
+    font-family: 'Righteous';
+    margin-bottom: 25px;
+}
+/*separacion con una linea algo visible de las 2 columnas*/
+.curriculum .fila .izquierda{
+    border-right: 2px solid #252A2E;
+}
+.curriculum .fila .derecha{
+    border-left: 2px solid #252A2E;
+}
+/*separa en recuadros todos los textos*/
+.curriculum .fila .item{
+    padding: 25px;
+    margin-bottom: 30px;
+    background-color: #252A2E;
+    position: relative;
+}
+/*ajusta los textos*/
+.curriculum .fila .item h4{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+/*resalta los textos de los CentrosE*/
+.curriculum .fila .item .CentroE{
+    color: #1cb698;
+    font-size: 22px;
+    font-weight: bold;
+    display: block;
+}
+/*resalta la fecha*/
+.curriculum .fila .item .fecha{
+    display: block;
+    color: #1cb698;
+    margin-bottom: 10px;
+}
+/*separacion de texto*/
+.curriculum .fila .item p{
+    line-height: 24px;
+}
+/*pequeña margen en la parte derecha e izquierda de las cajas de textos*/
+.curriculum .fila .izq{
+    border-right: 2px solid #1cb698;
+    margin-right: 20px;
+}
+.curriculum .fila .der{
+    border-left: 2px solid #1cb698;
+    margin-left: 20px;
+}
+/*conector de linea parte izquierda*/
+.curriculum .fila .item .conectori{
+    height: 2px;
+    background-color: #1cb698;
+    width: 47px;
+    position: absolute;
+    top: 50%;
+    right: -47px;
+    z-index: 5;
+}
+/*coloca un pequeño circulo entre los conectores*/
+.curriculum .fila .item .conectori .circuloi{
+    display: block;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: #1cb698;
+    float: right;
+    position: relative;
+    bottom: 4px;
+}
+/*conector de linea parte derecha*/
+.curriculum .fila .item .conectord{
+    height: 2px;
+    background-color: #1cb698;
+    width: 47px;
+    position: absolute;
+    top: 50%;
+    left: -47px;
+    z-index: 5;
+}
+/*coloca un pequeño circulo entre los conectores*/
+.curriculum .fila .item .conectord .circulod{
+    display: block;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: #1cb698;
+    float: left;
+    position: relative;
+    bottom: 4px;
+}
+/*SECCION PORTAFOLIO*/
+/*cambia el fondo de la seccion*/
+.portafolio{
+    background-color: #252A2E;
+    color: #fff;
+    padding: 50px 20px;
+}
+/*ajusta las imagenes*/
+.portafolio .contenido-seccion{
+    max-width: 1100px;
+    margin: auto;
+}
+/*ajuste del texto H2*/
+.portafolio h2{
+    font-size: 48px;
+    font-family: 'Righteous';
+    text-align: center;
+    padding: 20px 0;
+}
+/*centra las imagenes*/
+.portafolio .galeria{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+/*ajusta el tamaño de las imagenes y las pone en modo galeria*/
+.portafolio .galeria .proyecto{
+    position: relative;
+    max-width: 340px;
+    height: fit-content;
+    margin: 10px;
+    cursor: pointer;
+}
+/*muestra en bloques las imagenes*/
+.portafolio .galeria .proyecto img{
+    width: 100%;
+    display: block;
+}
+/*para mejorar el contenido visual y da opacidad a las imagenes*/
+.portafolio .galeria .proyecto .overlay{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background: linear-gradient(rgba(28,182,152,.8), rgba(28,182,152,.8));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: 1s;
+    font-size: 18px;
+    letter-spacing: 3px;
+    opacity: 0; /*si se omite esto mantiene la opacidad en ls imagenes junto con el texto*/
+}
+/*coloca un boton sobre el text H3*/
+.portafolio .galeria .proyecto .overlay h3{
+    margin-bottom: 20px;
+    transition: 1s;
+}
+/*cuando se pasa el cursos por la imagen se opoca y muestra el texto*/
+.portafolio .galeria .proyecto .overlay:hover{
+    opacity: 1;
+}
+/*da animacion al texto de las imagenes*/
+.portafolio .galeria .proyecto .overlay:hover h3{
+    margin-bottom: 0px;
+}
+/*SECCION CONTACTO*/
+/*cambia el fondo de la seccion contacto*/
+.contacto{
+    background-image: url(Img/contact_bg.png);
+    background-color: #1e2326;
+    color: #fff;
+    padding: 50px 0;
+}
+/*ajusta el contenido*/
+.contacto .contenido-seccion{
+    max-width: 1100px;
+    margin: auto;
+}
+/*ajusta el texto H2*/
+.contacto h2{
+    font-size: 48px;
+    font-family: 'Righteous';
+    text-align: center;
+    padding: 20px 0;
+}
+.contacto .fila{
+    display: flex;
+}
+/*separa las columnas*/
+.contacto .col{
+    width: 50%;
+    padding: 10px;
+    position: relative;
+}
+/*optimiza la parte de envio de mensajes*/
+.contacto .col input, .contacto .col textarea{
+    display: block;
+    width: 100%;
+    padding: 18px;
+    border: none;
+    margin-bottom: 20px;
+    background-color: #252A2E;
+    color: #fff;
+    font-size: 18px;
+}
+/*arregla el boton de eniar mensaje*/
+.contacto button{
+    cursor: pointer;
+    background-color: transparent;
+    border: 2px solid #fff;
+    width: fit-content;
+    display: block;
+    margin: 20px auto;
+    padding: 10px 22px;
+    font-size: 16px;
+    color: #fff;
+    position: relative;
+    z-index: 10;
+}
+/*para crear la animacion de caga del envio mensaje*/
+.contacto button .overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: #1cb698;
+    z-index: -1;
+    transition: 1s;
+}
+.contacto button:hover .overlay{
+    width: 100%;
+}
+/*ajusta la imagen de la ubicacion*/
+.contacto .col img{
+    width: 100%;
+}
+/*coloca los datos de informacion sobre el mapa*/
+.contacto .col .info{
+    position: absolute;
+    top: 40%;
+    background-color: #252A2E;
+    padding: 20px;
+    max-width: 350px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+/*cambio de color y estilo de los datos e iconos*/
+.contacto .col .info ul{
+    list-style: none;
+}
+.contacto .col .info ul li{
+    margin-bottom: 20px;
+}
+.contacto .col .info ul li i{
+    color: #1cb698;
+    display: inline-block;
+    margin-right: 20px;
+}
+/*SECCION PIE DE PAGINA*/
+/*centra el pie de pagina y da el tamaño de la seccion*/
+footer{
+    background-color: #25262e;
+    color: #fff;
+    padding: 5px 0 5px 0;
+    text-align: center;
+    position: relative;
+    width: 100%;
+}
+footer .redes{
+    margin-bottom: 1px;
+}
+/*agranda el icono de las redes*/
+footer .redes a{
+    color: #fff;
+    display: inline-block;
+    text-decoration: none;
+    border: 1px solid #fff;
+    border-radius: 100%;
+    width: 42px;
+    height: 42px;
+    line-height: 42px;
+    margin: 40px 5px;
+    font-size: 20px;
+    transition: .3s;
+}
+/*el icono de desplazamiento se modifica*/
+footer .arriba{
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-color: #1cb698;
+    color: #fff;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -25px;
+    border-radius: 50%;
+    line-height: 50px;
+    font-size: 18px;
+}
+/*SECCION RESPONSIVE*/
+/**/
+@media screen and (max-width:980px){
+    nav{
+        display: none;
+    }
+    .nav-responsive{
+        display: block;
+    }
+    nav.responsive{
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 75px;
+        background-color: #252A2E;
+        width: 180px;
+    }
+    nav.responsive ul{
+        display: block !important;
+    }
+    nav.resposive ul li{
+        border-bottom: 1px solid #fff;
+        padding: 10px 0;
+    }
+}
+@media screen and (max-width:700px){
+    .sobremi .fila{
+        display: block;
+    }
+    .sobremi .fila .col{
+        width: fit-content;
+    }
+    .skills .fila{
+        display: block;
+    }
+    .skills .fila .col{
+        width: 100%;
+    }
+    .skills .fila .col .barra-skill{
+        width: 100%;
+    }
+    .curriculum .fila{
+        display: block;
+    }
+    .curriculum .fila .col{
+        width: 90%;
+    }
+    .curriculum .fila .derecha{
+        margin-left: 20px;
+    }
+    .portafolio .galeria{
+        display: block;
+        width: 100%;
+    }
+    .portafolio .galeria .proyecto{
+        max-width: 100%;
+    }
+    .portafolio .galeria .proyecto img{
+        width: 100%;
+    }
+    .contacto .fila{
+        display: block;
+    }
+    .contacto .fila .col{
+        width: 100%;
+    }
+}
